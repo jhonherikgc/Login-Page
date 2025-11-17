@@ -120,19 +120,46 @@ const Particles: React.FC<ParticlesProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
+    // garante que o container das partículas ocupe toda a tela
+    container.style.position = 'fixed';
+    container.style.inset = '0';
+    container.style.width = '100vw';
+    container.style.height = '100vh';
+    container.style.pointerEvents = 'none';
+    container.style.zIndex = '0'; // deixe o container em 0 (canvas interno fica atrás)
+
     const renderer = new Renderer({ depth: false, alpha: true });
     const gl = renderer.gl;
     container.appendChild(gl.canvas);
     gl.clearColor(0, 0, 0, 0);
 
+    // força o canvas a preencher o container e ficar atrás do conteúdo
+    gl.canvas.style.display = 'block';
+    gl.canvas.style.position = 'fixed';
+    gl.canvas.style.top = '0';
+    gl.canvas.style.left = '0';
+    gl.canvas.style.width = '100vw';
+    gl.canvas.style.height = '100vh';
+    gl.canvas.style.pointerEvents = 'none';
+    gl.canvas.style.zIndex = '-1'; // canvas por trás do container
+
+    // tamanho inicial do renderer (considera devicePixelRatio)
+    const setRendererSize = (w: number, h: number) => {
+      const ratio = Math.max(1, window.devicePixelRatio || 1);
+      renderer.setSize(w * ratio, h * ratio);
+      gl.canvas.style.width = `${w}px`;
+      gl.canvas.style.height = `${h}px`;
+    };
+    setRendererSize(window.innerWidth, window.innerHeight);
+
     const camera = new Camera(gl, { fov: 15 });
     camera.position.set(0, 0, cameraDistance);
 
     const resize = () => {
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-      renderer.setSize(width, height);
-      camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      setRendererSize(width, height);
+      camera.perspective({ aspect: width / height });
     };
     window.addEventListener('resize', resize, false);
     resize();
