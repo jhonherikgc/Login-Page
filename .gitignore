@@ -1,4 +1,4 @@
-# Logs
+# Arquivos de Log
 logs
 *.log
 npm-debug.log*
@@ -7,16 +7,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependências e Pacotes
+# A pasta node_modules contém todas as bibliotecas baixadas. Ela é recriada com 'npm install'.
+/node_modules
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Arquivos de Build e Produção
+# A pasta 'dist' é gerada automaticamente quando você compila o projeto.
+/dist
+/dist-ssr
+
+# Arquivos de Cache e Temporários
+*.local
+.vite/
+
+# Arquivos de Sistema Operacional
 .DS_Store
+Thumbs.db
+
+# Arquivos de Editor de Código
+.idea
+.vscode/*
+!/.vscode/settings.json
+!/.vscode/tasks.json
+!/.vscode/launch.json
+!/.vscode/extensions.json
 *.suo
 *.ntvs*
 *.njsproj
