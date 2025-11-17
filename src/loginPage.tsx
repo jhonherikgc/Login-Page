@@ -5,8 +5,8 @@ import './styles/loginPage.css';
 const LoginPage: React.FC = () => {
   return (
     <div className="login-page">
-      {/* container agora ocupa toda a tela e fica fixo para evitar scrolls */}
-      <div style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0 }}>
+      {/* background de partículas ocupa toda a tela */}
+      <div className="particles-container">
         <Particles
           particleColors={['#ffffff', '#ffffff']}
           particleCount={200}
@@ -17,6 +17,24 @@ const LoginPage: React.FC = () => {
           alphaParticles={false}
           disableRotation={false}
         />
+      </div>
+
+      {/* container flexbox centralizado sobre o background */}
+      <div className="flex-container">
+        <div className="container-maior">
+          <div className="login-container">
+            <h1 className="login-title">Inicie sessão</h1>
+
+
+            <input type="text" className="usuario-input" placeholder="Usuário" />
+            <input type="password" className="password-input" placeholder="Senha" />
+
+            <div className="button-row">
+              <input type="submit" className="login-button" value="Log in" />
+              <input type="button" className="create-account-button" value="Criar conta" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
