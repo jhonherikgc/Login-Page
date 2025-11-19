@@ -17,6 +17,9 @@ html, body, #root {
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
+
+  /* necessário para posicionamento absoluto da animação */
+  position: relative;
 }
 
 /* canvas container - keep behind content */
@@ -49,9 +52,7 @@ html, body, #root {
   max-width: 95%;
   padding: 28px;
   border-radius: 12px;
-  background: rgba(0, 0, 0, 0.55); /* dark translucent box */
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  background: linear-gradient(to right, #224aa8, #b56fdc); /* dark translucent box */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -106,11 +107,43 @@ html, body, #root {
 }
 
 .login-button {
-  background-color: #1E90FF;
+  background-color: #8c52ff;
 }
 
 .create-account-button {
   background-color: #32CD32;
+}
+
+/* OAuth row */
+.oauth-row {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.google-login-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #222;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.google-login-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.google-icon {
+  font-size: 20px;
 }
 
 /* small screens adjustments */
@@ -153,4 +186,24 @@ html, body, #root {
 .login-container {
   margin: 20px;
   align-self: flex-end;
+}
+
+.animation-container {
+  /* posiciona a animação sobre o layout */
+  position: fixed;
+  left: 30em;       /* ajuste conforme quiser */
+  bottom: 13em;     /* ajuste conforme quiser */
+  width: 520px;
+  height: 620px;
+  z-index: 110;     /* acima do canvas das partículas */
+  pointer-events: none;
+  display: block;
+  box-sizing: border-box;
+
+  /* garante que o elemento interno da Lottie preencha o container */
+  > * {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
 }
