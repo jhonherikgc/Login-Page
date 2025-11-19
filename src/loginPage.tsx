@@ -25,7 +25,6 @@ const LoginPage: React.FC = () => {
           <div className="login-container">
             <h1 className="login-title">Inicie sessão</h1>
 
-
             <input type="text" className="usuario-input" placeholder="Usuário" />
             <input type="password" className="password-input" placeholder="Senha" />
 
