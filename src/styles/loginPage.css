@@ -13,7 +13,7 @@ html, body, #root {
 
 .login-page {
   @apply bg-black w-screen min-h-screen;
-  background: #000;
+  background: linear-gradient(180deg,#0b1220 0%, #1b2430 100%); /* temporário: mais claro que preto */
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
@@ -60,7 +60,9 @@ html, body, #root {
 }
 
 /* inputs and buttons */
-.usuario-input,
+.firstName-input,
+.lastName-input,
+.email-input,
 .password-input {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
@@ -72,7 +74,9 @@ html, body, #root {
   box-sizing: border-box;
 }
 
-.usuario-input::placeholder,
+.firstName-input::placeholder,
+.lastName-input::placeholder,
+.email-input::placeholder,
 .password-input::placeholder {
   color: rgba(255,255,255,0.6);
 }
@@ -104,6 +108,49 @@ html, body, #root {
   background-color: #32CD32;
 }
 
+.remember-me {
+  display: flex;
+  align-self: flex-start;
+  gap: 6px;
+  font-size: 0.875rem;
+}
+
+.forgot-password{
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.875rem;
+  align-self: flex-end;
+}
+
+/* novo: row que posiciona os itens de ação */
+.actions-row {
+  display: flex;
+  justify-content: space-between; /* remember-me à esquerda, forgot-password à direita */
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  box-sizing: border-box;
+  margin-top: 6px;
+}
+
+/* mantém estilo dos itens (pode sobrescrever regras antigas se necessário) */
+.actions-row .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #fff;
+  pointer-events: auto;
+}
+
+.actions-row .forgot-password {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.875rem;
+  pointer-events: auto;
+}
 
 /* small screens adjustments */
 @media (max-width: 420px) {
@@ -120,18 +167,14 @@ html, body, #root {
 }
 
 .container-maior {
-  width: 90em;
-  height: 700px;
-  max-width: 95%;
-  padding: 28px;
+  width: 85em;
+  height: 650px;
+  max-width: 55%;
   border-radius: 12px;
   background: rgba(221, 221, 221, 0.55); /* dark translucent box */
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 12px;
 
   /* alinha filhos à direita */
   align-items: flex-end;
@@ -145,4 +188,16 @@ html, body, #root {
 .login-container {
   margin: 20px;
   align-self: flex-end;
+}
+
+.login-google button {
+  color: #fff;
+  background-color: #4285F4;
+  border: 1px solid #ffffff14;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
 }
