@@ -7,8 +7,9 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* remove scrollbars */
-  background: #000;  /* full-screen background color fallback */
+  overflow: hidden;
+  background: linear-gradient(180deg, #0b1220 0%, #1b2430 100%);
+  color: #fff;
 }
 
 .login-page {
@@ -171,7 +172,7 @@ html, body, #root {
   height: 650px;
   max-width: 55%;
   border-radius: 12px;
-  background: rgba(221, 221, 221, 0.55); /* dark translucent box */
+  background: rgba(255, 255, 255, 0.822); /* dark translucent box */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -186,7 +187,6 @@ html, body, #root {
 
 /* garante que o login-container fique encostado à direita */
 .login-container {
-  margin: 20px;
   align-self: flex-end;
 }
 
