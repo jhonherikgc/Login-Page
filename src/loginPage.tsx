@@ -1,24 +1,9 @@
 import React from 'react';
-import Particles from './components/background/Particles';
 import './styles/loginPage.css';
 
 const LoginPage: React.FC = () => {
   return (
     <div className="login-page">
-      {/* background de partículas ocupa toda a tela */}
-      <div className="particles-container">
-        <Particles
-          particleColors={['#ffffff', '#ffffff']}
-          particleCount={200}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={true}
-          alphaParticles={false}
-          disableRotation={false}
-        />
-      </div>
-
       {/* container flexbox centralizado sobre o background */}
       <div className="flex-container">
         <div className="container-maior">
