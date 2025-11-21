@@ -36,7 +36,7 @@ const CreateAccount: React.FC = () => {
       <div className="flex-container">
         <div className="container-maior">
           <div className="signUp-container">
-            <h1 className="createAccount-title">Inicie sessão</h1>
+            <h1 className="signUp-title">Inicie sessão</h1>
 
             <input type="text" className="firstName-input" placeholder="Primeiro nome" />
             <input type="text" className="lastName-input" placeholder="Último nome" />
