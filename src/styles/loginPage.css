@@ -1,6 +1,7 @@
-@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @tailwind components;
 @tailwind utilities;
+@tailwind base;
 
 /* Remove scroll and make background static full screen */
 html, body, #root {
@@ -14,7 +15,7 @@ html, body, #root {
 
 .login-page {
   @apply bg-black w-screen min-h-screen;
-  background: linear-gradient(180deg,#0b1220 0%, #1b2430 100%); /* temporário: mais claro que preto */
+  background: linear-gradient(180deg,#224aa8 0%, #b56fdc 100%); /* temporário: mais claro que preto */
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
@@ -43,7 +44,7 @@ html, body, #root {
   max-width: 95%;
   padding: 28px;
   border-radius: 12px;
-  background: linear-gradient(to right, #224aa8, #b56fdc); /* dark translucent box */
+  background: linear-gradient(to right, #224aa8, #b56fdc);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -54,6 +55,8 @@ html, body, #root {
 
 /* title */
 .login-title {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
   margin: 0 0 8px 0;
   font-size: 1.25rem;
   font-weight: 600;
@@ -172,7 +175,7 @@ html, body, #root {
   height: 650px;
   max-width: 55%;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.822); /* dark translucent box */
+  background: rgba(255, 255, 255, 0.822); /* fundo branco translúcido */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -201,3 +204,78 @@ html, body, #root {
   cursor: pointer;
   font-weight: 600;
 }
+
+/* Lottie animation container — posicionada à esquerda */
+.animation-container {
+  position: absolute;
+  left: 30em;            /* ajuste conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 540px;
+  z-index: 80;           /* acima do background/partículas, abaixo do UI se necessário */
+  pointer-events: none;  /* não bloqueia cliques */
+  display: block;
+  box-sizing: border-box;
+}
+
+/* garante que o Lottie preencha o container */
+.animation-container > * {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+/* social login row */
+.social-login-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.social-login-text {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.95rem;
+  margin-right: 6px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* icon buttons */
+.social-icon {
+  cursor: pointer;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  outline: none;
+}
+
+/* brand colors (subtle) */
+.google-icon { background: #4285F4; }
+.facebook-icon { background: #1877F2; }
+.linkedin-icon { background: #0A66C2; }
+
+/* ensure svg inside keeps white color */
+.social-icon svg { color: #fff; }
