@@ -56,11 +56,21 @@ html, body, #root {
 /* title */
 .login-title {
   font-family: "Outfit", sans-serif;
+  text-shadow: #0b1220 1px 1px 4px;
   font-weight: 700;
   margin: 0 0 8px 0;
   font-size: 1.25rem;
   font-weight: 600;
   color: #fff;
+}
+
+.social-login-text {
+  text-shadow: #0b1220 1px 1px 4px;
+  color: rgba(255,255,255,0.9);
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 /* inputs and buttons */
@@ -176,6 +186,7 @@ html, body, #root {
   max-width: 55%;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.822); /* fundo branco translúcido */
+  box-shadow: #0b1220 0px 4px 30px;
   color: #fff;
   display: flex;
   flex-direction: column;
