@@ -1,11 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import LoginPage from './loginPage'
-import CreateAccount from './createAccount'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from './loginPage';
+import CreateAccount from './createAccount';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <LoginPage />
-    <CreateAccount />
-  </StrictMode>,
-)
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Root element not found');
+
+createRoot(rootElement).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/create-account" element={<CreateAccount />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+);
