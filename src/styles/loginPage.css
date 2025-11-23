@@ -53,15 +53,21 @@ html, body, #root {
   pointer-events: auto;
 }
 
+.email-form,
+.password-form {
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 /* title */
+
 .login-title {
   font-family: "Outfit", sans-serif;
   text-shadow: #0b1220 1px 1px 4px;
-  font-weight: 700;
-  margin: 0 0 8px 0;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: 1.5rem;
 }
 
 .social-login-text {
@@ -74,22 +80,19 @@ html, body, #root {
 }
 
 /* inputs and buttons */
-.firstName-input,
-.lastName-input,
 .email-input,
 .password-input {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
   color: #fff;
   padding: 10px 12px;
+  margin-bottom: 10px;
   border-radius: 8px;
   outline: none;
   width: 100%;
   box-sizing: border-box;
 }
 
-.firstName-input::placeholder,
-.lastName-input::placeholder,
 .email-input::placeholder,
 .password-input::placeholder {
   color: rgba(255,255,255,0.6);
@@ -105,6 +108,7 @@ html, body, #root {
 /* action buttons */
 .login-button,
 .create-account-button {
+  text-decoration: none;
   flex: 1;
   padding: 10px 14px;
   border-radius: 8px;
@@ -123,14 +127,22 @@ html, body, #root {
 }
 
 .remember-me {
+  font-family: 'outfit', sans-serif;
   display: flex;
   align-self: flex-start;
   gap: 6px;
   font-size: 0.875rem;
 }
 
-.forgot-password{
+.remember-me input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.forgot-password {
   color: #fff;
+  font-family: 'outfit', sans-serif;
   text-decoration: underline;
   cursor: pointer;
   font-size: 0.875rem;
@@ -206,6 +218,8 @@ html, body, #root {
 
 .login-google button {
   color: #fff;
+  margin-top: 55px;
+  margin-bottom: 20px;
   background-color: #4285F4;
   border: 1px solid #ffffff14;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -243,7 +257,7 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 40px;
   width: 100%;
   box-sizing: border-box;
 }
