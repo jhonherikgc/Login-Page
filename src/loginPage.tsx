@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './styles/loginPage.css';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -26,6 +27,12 @@ const LoginPage: React.FC = () => {
     load();
   }, []);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // aqui você pode tratar autenticação / validação
+    console.log('Formulário de login enviado');
+  };
+
   return (
     <div className="login-page">
       {/* Lottie fixada à esquerda */}
@@ -36,38 +43,49 @@ const LoginPage: React.FC = () => {
       <div className="flex-container">
         <div className="container-maior">
           <div className="login-container">
-            <h1 className="login-title">Inicie sessão</h1>
+            <h1 className="login-title">Bem-vindo (a) de volta!</h1>
 
-            <input type="text" className="firstName-input" placeholder="Primeiro nome" />
-            <input type="text" className="lastName-input" placeholder="Último nome" />
-            <input type="text" className="email-input" placeholder="Email" />
-            <input type="password" className="password-input" placeholder="Senha" />
+            <form onSubmit={handleSubmit} className="login-form">
+              <p className='email-form'>Email ou Nome de Usuario </p>
+              <input type="text" className="email-input" placeholder="Email ou Nome de Usuario" />
+              <p className='password-form'>
+                Senha 
+              </p>
+              <input type="password" className="password-input" placeholder="Senha" />
 
-            <div className="actions-row">
-              <div className="remember-me">
-                <input type="checkbox" id="rememberMe" />
-                <label htmlFor="rememberMe">Lembrar-me</label>
+              <div className="actions-row">
+                <div className="remember-me">
+                  <input type="checkbox" id="rememberMe" />
+                  <label htmlFor="rememberMe">Lembrar-me</label>
+                </div>
+
+                <div className="forgot-password">Esqueceu a senha?</div>
               </div>
 
-              <div className="forgot-password">Esqueceu a senha?</div>
-            </div>
+              <div className="login-google">
+                <Button
+                  variant="outlined"
+                  className="google-login-button"
+                  startIcon={<GoogleIcon className="google-icon" />}
+                  onClick={() => console.log('Entrar com Google')}
+                  aria-label="Entrar com Google"
+                >
+                  Entrar com Google
+                </Button>
+              </div>
 
-            <div className="login-google">
-              <Button
-                variant="outlined"
-                className="google-login-button"
-                startIcon={<GoogleIcon className="google-icon" />}
-                onClick={() => console.log('Entrar com Google')}
-                aria-label="Entrar com Google"
-              >
-                Entrar com Google
-              </Button>
-            </div>
-
-            <div className="button-row">
-              <input type="submit" className="login-button" value="Log in" />
-              <input type="button" className="create-account-button" value="Criar conta" />
-            </div>
+              <div className="button-row">
+                <button type="submit" className="login-button">Log in</button>
+                <Link
+                  to="/create-account"
+                  className="create-account-button"
+                  role="button"
+                  aria-label="Criar conta"
+                >
+                  Criar conta
+                </Link>
+              </div>
+            </form>
 
             <div className="social-login-row" aria-hidden={false}>
               <span className="social-login-text">Ou crie conta com</span>
