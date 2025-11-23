@@ -6,6 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import Button from '@mui/material/Button';
 import Lottie from 'lottie-react';
 
+
 const CreateAccount: React.FC = () => {
   const [anim, setAnim] = useState<any | null>(null);
 
@@ -25,6 +26,7 @@ const CreateAccount: React.FC = () => {
     };
     load();
   }, []);
+
 
   return (
     <div className="createAccount-page">
