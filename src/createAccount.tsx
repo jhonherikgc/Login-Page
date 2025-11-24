@@ -38,14 +38,19 @@ const CreateAccount: React.FC = () => {
       <div className="flex-container">
         <div className="container-maior">
           <div className="signUp-container">
-            <h1 className="signUp-title">Inicie sessão</h1>
+            <h1 className="signUp-title">Bem vindo (a)</h1>
+            <p className='signUp-subtitle'>Crie sua Conta,</p>
 
+            <p className='firstName-form'>Primeiro nome</p>
             <input type="text" className="firstName-input" placeholder="Primeiro nome" />
+            <p className='lastName-form'>Último nome</p>
             <input type="text" className="lastName-input" placeholder="Último nome" />
-            <input type="text" className="email-input" placeholder="Email" />
-            <input type="password" className="password-input" placeholder="Senha" />
+            <p className='email-form'>Email ou Nome de Usuario </p>
+            <input type="email" className="create-email-input" placeholder="Email" />
+            <p className='password-form'>Senha</p>
+            <input type="password" className="create-password-input" placeholder="Senha" />
 
-            <div className="actions-row">
+            <div className="create-actions-row">
               <div className="remember-me">
                 <input type="checkbox" id="rememberMe" />
                 <label htmlFor="rememberMe">Lembrar-me</label>
@@ -54,7 +59,7 @@ const CreateAccount: React.FC = () => {
               <div className="forgot-password">Esqueceu a senha?</div>
             </div>
 
-            <div className="login-google">
+            <div className="create-google">
               <Button
                 variant="outlined"
                 className="google-login-button"
@@ -71,7 +76,7 @@ const CreateAccount: React.FC = () => {
               <input type="button" className="create-account-button" value="Criar conta" />
             </div>
 
-            <div className="social-login-row" aria-hidden={false}>
+            <div className="create-social-login-row" aria-hidden={false}>
               <span className="social-login-text">Ou crie conta com</span>
               <div className="social-icons" role="group" aria-label="Social sign up">
                 <GoogleIcon
