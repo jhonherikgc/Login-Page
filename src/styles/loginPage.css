@@ -53,8 +53,8 @@ html, body, #root {
   pointer-events: auto;
 }
 
-.email-form,
-.password-form {
+.email-label,
+.password-label {
   font-family: 'Outfit', sans-serif;
   color: #fff;
   margin-bottom: 6px;
@@ -68,6 +68,16 @@ html, body, #root {
   font-family: "Outfit", sans-serif;
   text-shadow: #0b1220 1px 1px 4px;
   font-size: 1.5rem;
+}
+
+.login-subtitle {
+  font-family: "Outfit", sans-serif;
+  margin-top: -45px;
+  text-shadow: #0b1220 1px 1px 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 12px;
 }
 
 .social-login-text {
@@ -100,6 +110,7 @@ html, body, #root {
 
 /* buttons row */
 .button-row {
+  margin-top: -30px;
   display: flex;
   gap: 8px;
   justify-content: space-between;
@@ -111,12 +122,13 @@ html, body, #root {
   text-align: center;
   text-decoration: none;
   flex: 1;
-  padding: 10px 14px;
+  padding: 12px 16px;    /* leve aumento no padding */
   border-radius: 8px;
   border: none;
   cursor: pointer;
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;      /* mais contraste no peso */
+  font-size: 1rem;       /* tamanho da fonte ajustado */
 }
 
 .login-button {
@@ -265,11 +277,13 @@ html, body, #root {
 
 .social-login-text {
   color: rgba(255,255,255,0.9);
+  margin-top: -10px;
   font-size: 0.95rem;
   margin-right: 6px;
 }
 
 .social-icons {
+  margin-top: -10px;
   display: flex;
   gap: 10px;
   align-items: center;
