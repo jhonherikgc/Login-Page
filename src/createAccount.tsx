@@ -89,7 +89,7 @@ const CreateAccount: React.FC = () => {
             </form>
 
             <div className="create-social-login-row">
-              <span className="create-social-login-text">Ou crie conta com</span>
+              <span className="social-login-text">Ou crie conta com</span>
               <div className="create-social-icons" role="group" aria-label="Social sign up">
                 <GoogleIcon className="create-social-icon google-icon" onClick={() => console.log('Criar com Google')} role="button" tabIndex={0} aria-label="Criar com Google" />
                 <FacebookIcon className="create-social-icon facebook-icon" onClick={() => console.log('Criar com Facebook')} role="button" tabIndex={0} aria-label="Criar com Facebook" />
