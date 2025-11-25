@@ -82,7 +82,7 @@ const CreateAccount: React.FC = () => {
 
               <div className="create-button-row">
                 {/* Link que leva de volta para /login */}
-                <Link to="/login" className="create-login-button">Log in</Link>
+                <Link to="/login" className="login-button">Log in</Link>
                 {/* Botão de criar conta */}
                 <button type="submit" className="create-account-button">Criar Conta</button>
               </div>
