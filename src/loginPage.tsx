@@ -44,13 +44,12 @@ const LoginPage: React.FC = () => {
         <div className="container-maior">
           <div className="login-container">
             <h1 className="login-title">Bem-vindo (a) de volta!</h1>
+            <h2 className='login-subtitle'>Coloque suas credenciais</h2>
 
             <form onSubmit={handleSubmit} className="login-form">
-              <p className='email-form'>Email ou Nome de Usuario </p>
+              <p className='email-label'>Email ou Nome de Usuario</p>
               <input type="text" className="email-input" placeholder="Email ou Nome de Usuario" />
-              <p className='password-form'>
-                Senha 
-              </p>
+              <p className='password-label'>Senha</p>
               <input type="password" className="password-input" placeholder="Senha" />
 
               <div className="actions-row">
