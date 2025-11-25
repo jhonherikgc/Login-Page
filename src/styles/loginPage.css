@@ -276,8 +276,8 @@ html, body, #root {
 }
 
 .social-login-text {
+  font-family: 'Outfit', sans-serif;
   color: rgba(255,255,255,0.9);
-  margin-top: -10px;
   font-size: 0.95rem;
   margin-right: 6px;
 }

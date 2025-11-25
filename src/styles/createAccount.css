@@ -285,7 +285,7 @@ html, body, #root {
   box-sizing: border-box;
 }
 
-.create-social-login-text {
+.social-login-text{
   font-family: 'Outfit', sans-serif;
   color: rgba(255,255,255,0.9);
   font-size: 0.95rem;
@@ -314,8 +314,8 @@ html, body, #root {
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
-.social-icon:hover,
-.social-icon:focus {
+.create-social-icon:hover,
+.create-social-icon:focus {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.18);
   outline: none;
@@ -327,4 +327,4 @@ html, body, #root {
 .linkedin-icon { background: #0A66C2; }
 
 /* ensure svg inside keeps white color */
-.social-icon svg { color: #fff; }
+.create-social-icon svg { color: #fff; }
