@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './styles/createAccount.css';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -27,6 +28,10 @@ const CreateAccount: React.FC = () => {
     load();
   }, []);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Criar conta enviado');
+  };
 
   return (
     <div className="createAccount-page">
@@ -38,70 +43,60 @@ const CreateAccount: React.FC = () => {
       <div className="flex-container">
         <div className="container-maior">
           <div className="signUp-container">
-            <h1 className="signUp-title">Bem vindo (a)</h1>
-            <p className='signUp-subtitle'>Crie sua Conta,</p>
+            <h1 className="signUp-title">Crie sua conta</h1>
 
-            <p className='firstName-form'>Primeiro nome</p>
-            <input type="text" className="firstName-input" placeholder="Primeiro nome" />
-            <p className='lastName-form'>Último nome</p>
-            <input type="text" className="lastName-input" placeholder="Último nome" />
-            <p className='email-form'>Email ou Nome de Usuario </p>
-            <input type="email" className="create-email-input" placeholder="Email" />
-            <p className='password-form'>Senha</p>
-            <input type="password" className="create-password-input" placeholder="Senha" />
+            <form onSubmit={handleSubmit} className="login-form">
+              <label className="firstName-form" htmlFor="firstName">Primeiro nome</label>
+              <input id="firstName" type="text" name="firstName" className="firstName-input" placeholder="Primeiro nome" />
 
-            <div className="create-actions-row">
-              <div className="remember-me">
-                <input type="checkbox" id="rememberMe" />
-                <label htmlFor="rememberMe">Lembrar-me</label>
+              <label className="lastName-form" htmlFor="lastName">Último nome</label>
+              <input id="lastName" type="text" name="lastName" className="lastName-input" placeholder="Último nome" />
+
+              <label className="email-form" htmlFor="email">Email</label>
+              <input id="email" type="email" name="email" className="create-email-input" placeholder="Email" />
+
+              <label className="password-form" htmlFor="password">Senha</label>
+              <input id="password" type="password" name="password" className="create-password-input" placeholder="Senha" />
+
+              <div className="create-actions-row">
+                <div className="rememberMe">
+                  <input type="checkbox" id="newsletter" />
+                  <label htmlFor="newsletter">Quero receber novidades</label>
+                </div>
+
+                {/* Mantive Link para voltar ao login (comportamento original) */}
+                <Link to="/login" className="forgot-password">Já tem conta?</Link>
               </div>
 
-              <div className="forgot-password">Esqueceu a senha?</div>
-            </div>
+              <div className="create-google">
+                <Button
+                  variant="contained"
+                  className="google-login-button"
+                  startIcon={<GoogleIcon />}
+                  onClick={() => console.log('Criar com Google')}
+                  aria-label="Criar com Google"
+                >
+                  Criar com Google
+                </Button>
+              </div>
 
-            <div className="create-google">
-              <Button
-                variant="outlined"
-                className="google-login-button"
-                startIcon={<GoogleIcon className="google-icon" />}
-                onClick={() => console.log('Entrar com Google')}
-                aria-label="Entrar com Google"
-              >
-                Entrar com Google
-              </Button>
-            </div>
+              <div className="create-button-row">
+                {/* Link que leva de volta para /login */}
+                <Link to="/login" className="create-login-button">Log in</Link>
+                {/* Botão de criar conta */}
+                <button type="submit" className="create-account-button">Criar Conta</button>
+              </div>
+            </form>
 
-            <div className="button-row">
-              <input type="submit" className="login-button" value="Log in" />
-              <input type="button" className="create-account-button" value="Criar conta" />
-            </div>
-
-            <div className="create-social-login-row" aria-hidden={false}>
-              <span className="social-login-text">Ou crie conta com</span>
-              <div className="social-icons" role="group" aria-label="Social sign up">
-                <GoogleIcon
-                  className="social-icon google-icon"
-                  onClick={() => console.log('Entrar com Google')}
-                  role="button"
-                  tabIndex={0}
-                  aria-label="Entrar com Google"
-                />
-                <FacebookIcon
-                  className="social-icon facebook-icon"
-                  onClick={() => console.log('Entrar com Facebook')}
-                  role="button"
-                  tabIndex={0}
-                  aria-label="Entrar com Facebook"
-                />
-                <LinkedInIcon
-                  className="social-icon linkedin-icon"
-                  onClick={() => console.log('Entrar com LinkedIn')}
-                  role="button"
-                  tabIndex={0}
-                  aria-label="Entrar com LinkedIn"
-                />
+            <div className="create-social-login-row">
+              <span className="create-social-login-text">Ou crie conta com</span>
+              <div className="create-social-icons" role="group" aria-label="Social sign up">
+                <GoogleIcon className="create-social-icon google-icon" onClick={() => console.log('Criar com Google')} role="button" tabIndex={0} aria-label="Criar com Google" />
+                <FacebookIcon className="create-social-icon facebook-icon" onClick={() => console.log('Criar com Facebook')} role="button" tabIndex={0} aria-label="Criar com Facebook" />
+                <LinkedInIcon className="create-social-icon linkedin-icon" onClick={() => console.log('Criar com LinkedIn')} role="button" tabIndex={0} aria-label="Criar com LinkedIn" />
               </div>
             </div>
+
           </div>
         </div>
       </div>
