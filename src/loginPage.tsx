@@ -6,6 +6,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Button from '@mui/material/Button';
 import Lottie from 'lottie-react';
+import PersonIcon from '@mui/icons-material/Person';
+import LockIcon from '@mui/icons-material/Lock';
 
 const LoginPage: React.FC = () => {
   const [anim, setAnim] = useState<any | null>(null);
@@ -49,9 +51,11 @@ const LoginPage: React.FC = () => {
             <form onSubmit={handleSubmit} className="login-form">
               <p className='email-label'>Email ou Nome de Usuario</p>
               <input type="text" className="email-input" placeholder="Email ou Nome de Usuario" />
+              <PersonIcon className="person-icon" />
               
               <p className='password-label'>Senha</p>
               <input type="password" className="password-input" placeholder="Senha" />
+              <LockIcon className="lock-icon" />
 
               <div className="actions-row">
                 <div className="remember-me">

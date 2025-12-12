@@ -6,7 +6,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Button from '@mui/material/Button';
 import Lottie from 'lottie-react';
-
+import PersonIcon from '@mui/icons-material/Person';
+import LockIcon from '@mui/icons-material/Lock';
 
 const CreateAccount: React.FC = () => {
   const [anim, setAnim] = useState<any | null>(null);
@@ -54,9 +55,11 @@ const CreateAccount: React.FC = () => {
 
               <label className="email-form" htmlFor="email">Email</label>
               <input id="email" type="email" name="email" className="create-email-input" placeholder="Email" />
+              <PersonIcon className="person-icon" />
 
               <label className="password-form" htmlFor="password">Senha</label>
               <input id="password" type="password" name="password" className="create-password-input" placeholder="Senha" />
+              <LockIcon className="lock-icon" />
 
               <div className="create-actions-row">
                 <div className="rememberMe">
