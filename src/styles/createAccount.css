@@ -59,8 +59,7 @@ html, body, #root {
 .password-form {
   font-family: 'Outfit', sans-serif;
   color: #fff;
-  /* espaçamento consistente: rótulo mais próximo do input */
-  margin: 10px 0 6px;
+  margin-bottom: 6px;
   font-size: 0.95rem;
   font-weight: 600;
 }
@@ -95,14 +94,15 @@ html, body, #root {
 .lastName-input,
 .create-email-input,
 .create-password-input {
-  background: rgba(255,255,255,0.04); /* ligeiramente mais visível */
-  border: 1px solid rgba(255,255,255,0.10);
-  margin-bottom: 16px; /* aumenta espaço entre inputs */
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
   color: #fff;
-  padding: 12px 14px; /* padding maior para melhor usabilidade */
+  padding: 10px 12px;
+  margin-bottom: 10px;
   border-radius: 8px;
   outline: none;
   width: 100%;
+  height: 35px;
   box-sizing: border-box;
 }
 
@@ -137,6 +137,7 @@ html, body, #root {
   font-weight: 700;
   font-size: 1rem;       /* mesmo tamanho aplicado aqui */
 }
+
 
 .create-login-button {
   background-color: #8c52ff;
