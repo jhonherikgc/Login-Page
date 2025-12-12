@@ -49,6 +49,7 @@ const LoginPage: React.FC = () => {
             <form onSubmit={handleSubmit} className="login-form">
               <p className='email-label'>Email ou Nome de Usuario</p>
               <input type="text" className="email-input" placeholder="Email ou Nome de Usuario" />
+              
               <p className='password-label'>Senha</p>
               <input type="password" className="password-input" placeholder="Senha" />
 
