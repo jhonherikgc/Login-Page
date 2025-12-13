@@ -49,8 +49,8 @@ const LoginPage: React.FC = () => {
             <h2 className='login-subtitle'>Coloque suas credenciais</h2>
 
             <form onSubmit={handleSubmit} className="login-form">
-              <p className='email-label'>Email ou Nome de Usuario</p>
-              <input type="text" className="email-input" placeholder="Email ou Nome de Usuario" />
+              <p className='email-label'>E-mail</p>
+              <input type="text" className="email-input" placeholder="E-mail" />
               <PersonIcon className="person-icon" />
               
               <p className='password-label'>Senha</p>
@@ -79,7 +79,7 @@ const LoginPage: React.FC = () => {
               </div>
 
               <div className="button-row">
-                <button type="submit" className="login-button">Log in</button>
+                <button type="submit" className="login-button">Entrar</button>
                 <Link
                   to="/create-account"
                   className="create-account-button"

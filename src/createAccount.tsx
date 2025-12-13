@@ -45,6 +45,7 @@ const CreateAccount: React.FC = () => {
         <div className="container-maior">
           <div className="signUp-container">
             <h1 className="signUp-title">Crie sua conta</h1>
+            <h2 className="signUp-subtitle">Insira seus dados para criar uma conta</h2>
 
             <form onSubmit={handleSubmit} className="login-form">
               <label className="firstName-form" htmlFor="firstName">Primeiro nome</label>
@@ -53,8 +54,8 @@ const CreateAccount: React.FC = () => {
               <label className="lastName-form" htmlFor="lastName">Último nome</label>
               <input id="lastName" type="text" name="lastName" className="lastName-input" placeholder="Último nome" />
 
-              <label className="email-form" htmlFor="email">Email</label>
-              <input id="email" type="email" name="email" className="create-email-input" placeholder="Email" />
+              <label className="email-form" htmlFor="email">E-mail</label>
+              <input id="email" type="email" name="email" className="create-email-input" placeholder="E-mail" />
               <PersonIcon className="person-icon" />
 
               <label className="password-form" htmlFor="password">Senha</label>
@@ -85,7 +86,7 @@ const CreateAccount: React.FC = () => {
 
               <div className="create-button-row">
                 {/* Link que leva de volta para /login */}
-                <Link to="/login" className="login-button">Log in</Link>
+                <Link to="/login" className="login-button">Entrar</Link>
                 {/* Botão de criar conta */}
                 <button type="submit" className="create-account-button">Criar Conta</button>
               </div>
