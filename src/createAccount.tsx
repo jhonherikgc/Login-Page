@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import './styles/createAccount.css';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -36,6 +37,9 @@ const CreateAccount: React.FC = () => {
 
   return (
     <div className="createAccount-page">
+      <Helmet>
+      <title>Crie sua conta</title>
+      </Helmet>
       {/* Lottie fixada à esquerda */}
       <div className="animation-container" aria-hidden="true">
         {anim ? <Lottie animationData={anim} loop /> : null}
@@ -71,6 +75,11 @@ const CreateAccount: React.FC = () => {
                 {/* Mantive Link para voltar ao login (comportamento original) */}
                 <Link to="/login" className="forgot-password">Já tem conta?</Link>
               </div>
+              
+              <div className="create-button-row">
+                {/* Botão de criar conta  que leva de volta para /login */}
+                <Link to="/login" className="create-account-button" role="button" aria-label="Voltar para login">Criar Conta</Link>
+              </div>
 
               <div className="create-google">
                 <Button
@@ -84,18 +93,11 @@ const CreateAccount: React.FC = () => {
                 </Button>
               </div>
 
-              <div className="create-button-row">
-                {/* Link que leva de volta para /login */}
-                <Link to="/login" className="login-button">Entrar</Link>
-                {/* Botão de criar conta */}
-                <button type="submit" className="create-account-button">Criar Conta</button>
-              </div>
             </form>
 
             <div className="create-social-login-row">
               <span className="social-login-text">Ou crie conta com</span>
               <div className="create-social-icons" role="group" aria-label="Social sign up">
-                <GoogleIcon className="create-social-icon google-icon" onClick={() => console.log('Criar com Google')} role="button" tabIndex={0} aria-label="Criar com Google" />
                 <FacebookIcon className="create-social-icon facebook-icon" onClick={() => console.log('Criar com Facebook')} role="button" tabIndex={0} aria-label="Criar com Facebook" />
                 <LinkedInIcon className="create-social-icon linkedin-icon" onClick={() => console.log('Criar com LinkedIn')} role="button" tabIndex={0} aria-label="Criar com LinkedIn" />
               </div>

@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Lottie from 'lottie-react';
 import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
+import { Helmet } from 'react-helmet-async';
 
 const LoginPage: React.FC = () => {
   const [anim, setAnim] = useState<any | null>(null);
@@ -37,6 +38,10 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="login-page">
+      <Helmet>
+      <title>Faça Login</title>
+      </Helmet>
+
       {/* Lottie fixada à esquerda */}
       <div className="animation-container" aria-hidden="true">
         {anim ? <Lottie animationData={anim} loop /> : null}
@@ -92,15 +97,8 @@ const LoginPage: React.FC = () => {
             </form>
 
             <div className="social-login-row" aria-hidden={false}>
-              <span className="social-login-text">Ou crie conta com</span>
+              <span className="social-login-text">Ou entre com</span>
               <div className="social-icons" role="group" aria-label="Social sign up">
-                <GoogleIcon
-                  className="social-icon google-icon"
-                  onClick={() => console.log('Entrar com Google')}
-                  role="button"
-                  tabIndex={0}
-                  aria-label="Entrar com Google"
-                />
                 <FacebookIcon
                   className="social-icon facebook-icon"
                   onClick={() => console.log('Entrar com Facebook')}
