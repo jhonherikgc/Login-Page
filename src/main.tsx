@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './loginPage';
 import CreateAccount from './createAccount';
 import './styles/loginPage.css';
+import { HelmetProvider } from 'react-helmet-async';
 
 const RootApp: React.FC = () => (
   <BrowserRouter>
@@ -17,8 +18,12 @@ const RootApp: React.FC = () => (
 
 const container = document.getElementById('root');
 if (!container) throw new Error('Root element not found');
+
 createRoot(container).render(
   <React.StrictMode>
-    <RootApp />
+    {/* o RootApp com o HelmetProvider */}
+    <HelmetProvider>
+      <RootApp />
+    </HelmetProvider>
   </React.StrictMode>
 );
