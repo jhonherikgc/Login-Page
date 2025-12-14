@@ -123,13 +123,21 @@ html, body, #root {
   text-align: center;
   text-decoration: none;
   flex: 1;
-  padding: 12px 16px;    /* leve aumento no padding */
+  padding: 12px 16px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   color: #fff;
-  font-weight: 700;      /* mais contraste no peso */
-  font-size: 1rem;       /* tamanho da fonte ajustado */
+  font-weight: 700;      
+  font-size: 1rem;       
+}
+
+/* Buttons Animations */
+.login-button:hover,
+.create-account-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  transition: transform 140ms ease, box-shadow 140ms ease;
 }
 
 .login-button {
@@ -174,7 +182,7 @@ html, body, #root {
   margin-top: 6px;
 }
 
-/* mantém estilo dos itens (pode sobrescrever regras antigas se necessário) */
+/* mantém estilo dos itens*/
 .actions-row .remember-me {
   display: flex;
   align-items: center;
@@ -225,7 +233,7 @@ html, body, #root {
   pointer-events: auto;
 }
 
-
+/* ícones dentro dos inputs */
 .person-icon {
   position: absolute;
   margin-left: -30px;
@@ -256,7 +264,16 @@ html, body, #root {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+  transition: transform 140ms ease, box-shadow 140ms ease;
 }
+
+/* hover/focus effects */
+.login-google button:hover,
+.login-google button:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  outline: none;
+  }
 
 /* Lottie animation container — posicionada à esquerda */
 .animation-container {

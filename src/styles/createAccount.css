@@ -125,7 +125,6 @@ html, body, #root {
 
 /* buttons row */
 .create-button-row {
-
   display: flex;
   gap: 8px;
   justify-content: space-between;
@@ -246,14 +245,10 @@ html, body, #root {
 }
 
 /* garante que o signUp-container fique encostado à direita */
-.signUp-container {
-  align-self: flex-end;
-}
 
 .create-google button {
   color: #fff;
-  margin-top: 5px;
-  margin-bottom: -10px;
+  margin-top: 10px;
   background-color: #4285F4;
   border: 1px solid #ffffff14;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -262,7 +257,16 @@ html, body, #root {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+  transition: transform 140ms ease, box-shadow 140ms ease;
 }
+
+/* hover/focus effects */
+.create-google button:hover,
+.create-google button:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  outline: none;
+  }
 
 /* Lottie animation container — posicionada à esquerda */
 .animation-container {
@@ -272,13 +276,13 @@ html, body, #root {
   transform: translateY(-50%);
   width: 520px;
   height: 540px;
-  z-index: 80;           /* acima do background/partículas, abaixo do UI se necessário */
-  pointer-events: none;  /* não bloqueia cliques */
+  z-index: 80;          
+  pointer-events: none;  
   display: block;
   box-sizing: border-box;
 }
 
-/* garante que o Lottie preencha o container */
+/* Lottie Container*/
 .animation-container > * {
   width: 100% !important;
   height: 100% !important;
