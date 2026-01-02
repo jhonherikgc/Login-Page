@@ -52,3 +52,10 @@ Para configurar o ambiente e executar o projeto, utilize os comandos **bash** ab
 3. **Rodar projeto**
     ```bash
     npm run dev
+
+## Formas de Contato 📱
+Caso tenha alguma ideia de como eu poderia melhorar o projeto, entre em contato comigo abaixo:
+
+linkedin: https://www.linkedin.com/in/jhonherikgc/
+<br><br>
+Discord: jhonherikgc
